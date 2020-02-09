@@ -1,5 +1,20 @@
-<h1>Post</h1>
-
-<%=render 'shared/form', post: @post %>
-
-<%= link_to "Volver atrás", create_post_path %>
+<h1 class="text-center">Post</h1>
+<br>
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>Título</th>
+            <th>Fecha creación</th>
+            <th>Imágen</th>
+            <th>Contenido</th>
+        </tr>
+        <tr>
+            <td><%= @post.title %> </td>
+            <td><%= @post.created_at %> </td>
+            <td><%= image_tag @post.image %></td>
+            <td><%= @post.content %></td>
+        </tr>
+    </table>    
+</div>
+<br>
+<%= link_to "Volver atrás", created_post_path %>
