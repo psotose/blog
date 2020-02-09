@@ -1,0 +1,30 @@
+<nav class="navbar fixed-top navbar-dark bg-dark">
+    <span class="navbar-brand"><form method="get" action="/users/sign_in">
+            <button type="submit" class="btn btn-light ">
+                <%= link_to "Iniciar Sesión", posts_dashboard_path %>
+        </button>
+    </span>  
+</nav>
+
+
+
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>Título</th>
+            <th>Fecha creación</th>
+            <th>Imágen</th>
+            <th>Contenido</th>
+        </tr>
+        <% @posts.each do |post| %>
+            <tr>
+                <td><%= post.title %> </td>
+                <td><%= post.created_at %> </td>
+                <td><%= image_tag post.image %> </td> 
+                <td><%= post.content %> </td>
+            </tr>
+        <%end%>
+    </table>
+</div>
+
+

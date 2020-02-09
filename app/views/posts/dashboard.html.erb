@@ -1,0 +1,29 @@
+<div>
+    <h1>Bienvenido a tu espacio Blog</h1>
+    <h3>Muchas gracias por tu aporte!</h3>
+    <h3>Recuerda escribir posts sobre temas relevantes y no olvides guardarlo al finalizar</h3>
+
+    <div class='row'>
+        <div class="col-md-6 offset-md-3">
+            <%= form_with(model: @post, local: true) do |f| %>
+                <div class="form-group">
+                    <%= f.label :title %> 
+                    <%= f.text_field :title, class:'form-control' %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :image %> 
+                    <%= f.text_field :image, class:'form-control' %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :content %> 
+                    <%= f.text_field :content, class:'form-control' %>
+                </div>
+                <div class="offset-md-5">
+                    <%= f.submit class: 'btn btn-info'%> 
+            </div>    
+        <% end %>
+        </div>
+    </div>
+    <%= link_to "Ver mis posts", created_post_path, method: 'get' %>
+</div>    
+

@@ -1,0 +1,25 @@
+<h1 class="text-center">Tus artículos</h1>
+
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>Título</th>
+            <th>Fecha creación</th>
+            <th>Imágen</th>
+            <th>Contenido</th>
+        </tr>
+        <% @posts.each do |post| %>
+            <tr>
+                <td><%= post.title %> </td>
+                <td><%= post.created_at %> </td>
+                <td><%= image_tag post.image %></td>
+                <td><%= post.content %></td>
+                <td><%= link_to 'editar', edit_post_path(post) %></td>
+                <td><%= link_to 'show', show_post_path(post) %></td>
+                <td><%= link_to 'eliminar', deleted_post_path(post), method: :delete, data: {confirm: 'seguro quieres borrarlo?'} %></td>
+            </tr>
+        <%end%>
+    </table>
+    <%= link_to 'Crea un nuevo artículo', posts_dashboard_path %>
+    <%= link_to 'Vista de usuarios', root_path %>
+</div>
